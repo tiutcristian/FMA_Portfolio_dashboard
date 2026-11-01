@@ -1,0 +1,90 @@
+{
+  "student": "Cristian Tiut",
+  "group": "SPF",
+  "currency": "EUR",
+  "startDate": "2026-10-12",
+  "evaluationDate": "2027-01-15",
+  "source": "CPFG en-1.xlsx",
+  "assets": [
+    {
+      "id": "CSH2",
+      "name": "Amundi Smart Overnight Return UCITS ETF Acc",
+      "indicator": "CSH2 (LU1190417599)",
+      "venue": "Euronext Paris",
+      "symbol": "CSH2.PA",
+      "category": "Money market",
+      "initialPrice": 110.22,
+      "allocation": 2000000
+    },
+    {
+      "id": "XEON",
+      "name": "Xtrackers II EUR Overnight Rate Swap UCITS ETF 1C",
+      "indicator": "XEON (LU0290358497)",
+      "venue": "Xetra",
+      "symbol": "XEON.DE",
+      "category": "Money market",
+      "initialPrice": 150.486,
+      "allocation": 1200000
+    },
+    {
+      "id": "XDWS",
+      "name": "Xtrackers MSCI World Consumer Staples UCITS ETF 1C",
+      "indicator": "XDWS (IE00BM67HN09)",
+      "venue": "Xetra",
+      "symbol": "XDWS.DE",
+      "category": "Equity sector",
+      "initialPrice": 49.145,
+      "allocation": 800000
+    },
+    {
+      "id": "IQQ0",
+      "name": "iShares Edge MSCI World Minimum Volatility UCITS ETF",
+      "indicator": "IQQ0 (IE00B8FHGS14)",
+      "venue": "Xetra",
+      "symbol": "IQQ0.DE",
+      "category": "Equity factor",
+      "initialPrice": 68.98,
+      "allocation": 1500000
+    },
+    {
+      "id": "XDWH",
+      "name": "Xtrackers MSCI World Health Care UCITS ETF 1C",
+      "indicator": "XDWH (IE00BM67HK77)",
+      "venue": "Xetra",
+      "symbol": "XDWH.DE",
+      "category": "Equity sector",
+      "initialPrice": 55.69,
+      "allocation": 1000000
+    },
+    {
+      "id": "XDEW",
+      "name": "Xtrackers S&P 500 Equal Weight UCITS ETF 1C",
+      "indicator": "XDEW (IE00BLNMYC90)",
+      "venue": "Xetra",
+      "symbol": "XDEW.DE",
+      "category": "Equity index",
+      "initialPrice": 106.66,
+      "allocation": 1700000
+    },
+    {
+      "id": "EQNR",
+      "name": "Equinor ASA",
+      "indicator": "EQNR (NO0010096985)",
+      "venue": "Börse Frankfurt (EUR quote)",
+      "symbol": "DNQ.F",
+      "category": "Single stock (energy)",
+      "initialPrice": 39.39,
+      "allocation": 1000000
+    },
+    {
+      "id": "BTC",
+      "name": "Bitcoin",
+      "indicator": "BTC-EUR",
+      "venue": "Yahoo Finance / CoinMarketCap (EUR, daily close UTC)",
+      "symbol": "BTC-EUR",
+      "category": "Crypto",
+      "initialPrice": 73265.55,
+      "allocation": 800000
+    }
+  ]
+}

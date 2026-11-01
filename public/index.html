@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FMA Portfolio Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/vendor/chart.js/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>FMA Portfolio Dashboard</h1>
+        <p class="muted" id="subtitle">Loading portfolio…</p>
+      </div>
+      <div class="topbar-actions">
+        <span class="muted small" id="freshness"></span>
+        <button type="button" id="refresh" class="btn">Refresh data</button>
+        <button type="button" id="theme" class="btn btn-ghost" aria-label="Toggle dark mode">◐</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="banner" class="banner" hidden></div>
+
+      <section class="kpis" id="kpis" aria-label="Key figures"></section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="card-head">
+            <h2>Portfolio value</h2>
+            <div class="seg" role="group" aria-label="Portfolio chart unit">
+              <button type="button" data-unit="eur" class="active">EUR</button>
+              <button type="button" data-unit="pct">% return</button>
+            </div>
+          </div>
+          <div class="chart chart-lg"><canvas id="portfolioChart"></canvas></div>
+        </article>
+        <article class="card">
+          <div class="card-head">
+            <h2>Allocation</h2>
+            <div class="seg" role="group" aria-label="Allocation view">
+              <button type="button" data-alloc="current" class="active">Current</button>
+              <button type="button" data-alloc="initial">Initial</button>
+            </div>
+          </div>
+          <div class="chart chart-lg"><canvas id="allocationChart"></canvas></div>
+        </article>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="card-head"><h2>Cumulative return by asset</h2></div>
+          <p class="muted small">Change of each closing price against the initial value from the spreadsheet.</p>
+          <div class="chart chart-lg"><canvas id="returnsChart"></canvas></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><h2>Contribution to portfolio return</h2></div>
+          <p class="muted small">Each asset's P&amp;L as a share of the €10M starting value; the bars add up to the portfolio return.</p>
+          <div class="chart chart-lg"><canvas id="contributionChart"></canvas></div>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Holdings</h2></div>
+        <div class="table-wrap"><table id="holdings" class="data"></table></div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Assets</h2>
+        <div class="assets" id="assets"></div>
+      </section>
+
+      <section class="grid-2">
+        <article class="card">
+          <div class="card-head"><h2>Correlation of daily returns</h2></div>
+          <p class="muted small">Pearson correlation over exchange trading days. Blue moves together, red moves opposite.</p>
+          <div class="table-wrap"><table id="correlations" class="corr"></table></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><h2>Portfolio statistics</h2></div>
+          <dl class="stats" id="portfolioStats"></dl>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Daily closes</h2></div>
+        <p class="muted small">First row is the initial value from the spreadsheet; every row after is the fetched closing price for that day.</p>
+        <div class="table-wrap"><table id="closes" class="data"></table></div>
+      </section>
+    </main>
+
+    <footer class="muted small">
+      Prices: Yahoo Finance daily closes. A day is included once its market has closed (Bitcoin closes at 00:00 UTC). Not investment advice.
+    </footer>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
